@@ -1,0 +1,24 @@
+.nav {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: darkgray;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: x-large;
+  font-weight: bold;
+  color: azure;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: bisque;
+}
+
+.nav-item.active {
+  color: black;
+}
