@@ -38,7 +38,7 @@ export const users: User[] = [
     details: {
       age: 15,
       country: "Greece",
-      sport: "Kickboxing/Muaiy-Thai",
+      sport: "Kickboxing/Muay-Thai",
       image:
         "https://xaidarisimera.gr/wp-content/uploads/2022/09/-%CE%BC%CE%B1%CF%81%CE%B9%CE%B14-e1663510001367.jpg",
     },
