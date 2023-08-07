@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "components/Home/Home";
 import NavBar from "components/Navbar/Navbar";
-import OrderSummary from "components/Order-Summary/Order-Summary";
+import Participation from "components/Participation/Participation";
 import NotFound from "components/Not-Found/Not-Found";
 import Products from "components/Products/Products";
 import Featured from "components/Products/components/Featured/Featured";
@@ -14,7 +14,6 @@ import Profile from "components/Profile/Profile";
 import { AuthProvider } from "utils/Auth/Auth";
 import Login from "components/Login/Login";
 import RequireAuth from "utils/RequireAuth/RequireAuth";
-// import About from "components/About/About";
 const LazyAboutComponent = React.lazy(() => import("components/About/About"));
 
 function App() {
@@ -56,7 +55,7 @@ function App() {
                 </RequireAuth>
               }
             />
-            <Route path="order-summary" element={<OrderSummary />} />
+            <Route path="participation-form" element={<Participation />} />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
