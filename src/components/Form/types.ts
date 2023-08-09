@@ -1,19 +1,15 @@
-import { User } from "components/Users/types";
+import { InputType } from "../Input/types";
 
-export type FormProps = {};
-
-type FormFieldType = {
+export type FieldFormat = {
+  id: string; //Must always refer to the keys of the according interface
+  type: InputType;
+  name: string; //Must always refer to the keys of the according interface
   label: string;
-  type: string;
-  name: keyof User;
+  placeholder?: string;
+  requiredMessage?: string | boolean;
 };
 
-export const formFields: FormFieldType[] = [
-  { label: "First Name:", type: "text", name: "name" },
-  { label: "Last Name:", type: "text", name: "surname" },
-  { label: "Pro Name:", type: "text", name: "proName" },
-  { label: "Age:", type: "number", name: "age" },
-  { label: "Sport:", type: "text", name: "sport" },
-  { label: "Country:", type: "text", name: "country" },
-  { label: "Your image url:", type: "text", name: "image" },
-];
+export type FormProps = React.HTMLProps<HTMLFormElement> & {
+  fieldValues: FieldFormat[];
+  formSubmission: (data: Record<string, any>) => void;
+};

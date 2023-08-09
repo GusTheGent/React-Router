@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   background-color: brown;
+  position: relative;
 }
 
 .user-img {
@@ -19,4 +20,20 @@
 .pro-name {
   color: gold;
   font-size: x-large;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
 }

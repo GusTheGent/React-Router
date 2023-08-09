@@ -6,8 +6,10 @@ export interface User {
   surname: string;
   proName: string;
   active: boolean;
-  age: number;
-  country: string;
-  sport: string;
-  image: string;
+  details: {
+    age: number;
+    country: string;
+    sport: string;
+    image: string;
+  };
 }

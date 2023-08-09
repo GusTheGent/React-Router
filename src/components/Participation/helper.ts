@@ -1,0 +1,60 @@
+import { FieldFormat } from "components/Form/types";
+
+export const participationFields: FieldFormat[] = [
+  {
+    id: "name",
+    type: "text",
+    name: "name",
+    label: "First Name",
+    placeholder: "First Name",
+    requiredMessage: "This field is required",
+  },
+  {
+    id: "surname",
+    type: "text",
+    name: "surname",
+    label: "Last Name",
+    placeholder: "Last Name",
+    requiredMessage: "This field is required",
+  },
+  {
+    id: "proName",
+    type: "text",
+    name: "proName",
+    label: "Professional Name",
+    placeholder: "Professional name",
+    requiredMessage: "This field is required",
+  },
+  {
+    id: "details.age",
+    type: "number",
+    name: "details.age",
+    label: "Age",
+    placeholder: "Age",
+    requiredMessage: "Age is required",
+  },
+  {
+    id: "details.sport",
+    type: "text",
+    name: "details.sport",
+    label: "Sport",
+    placeholder: "Enter your sport",
+    requiredMessage: "Sport is required",
+  },
+  {
+    id: "details.country",
+    type: "text",
+    name: "details.country",
+    label: "Country",
+    placeholder: "Country",
+    requiredMessage: "Country is required",
+  },
+  {
+    id: "details.image",
+    type: "text",
+    name: "details.image",
+    label: "Image",
+    placeholder: "Paste a url of your image",
+    requiredMessage: "Image is required",
+  },
+];

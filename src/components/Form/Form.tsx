@@ -1,40 +1,44 @@
 import React from "react";
-import { FormProps, formFields } from "./types";
 import { useForm } from "react-hook-form";
+import { FormProps } from "./types";
+import FormInput from "../FormInput/FormInput";
 import { DevTool } from "@hookform/devtools";
 import "./Form.css";
-import Input from "components/Input/Input";
-import { User } from "components/Users/types";
-import { users } from "data/users";
-import { useNavigate } from "react-router-dom";
 
-const Form: React.FunctionComponent<FormProps> = () => {
-  const navigate = useNavigate();
-  const form = useForm<User>();
-  const { register, control, handleSubmit } = form;
-  const onSubmit = (data: User) => {
-    users.push({
-      ...data,
-      id: users.length + 1,
-      active: true,
-    });
-    navigate("/users");
-  };
+const Form: React.FunctionComponent<FormProps> = ({
+  fieldValues,
+  formSubmission,
+}) => {
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<Record<string, any>>();
+
+  const onSubmit = handleSubmit((data) => {
+    console.log("Form Data: ", data);
+    formSubmission(data);
+  });
   return (
     <React.Fragment>
-      <form className="cool-form" onSubmit={handleSubmit(onSubmit)}>
-        {formFields.map((formField, index) => {
+      <form className="form" onSubmit={onSubmit}>
+        {fieldValues.map((field) => {
           return (
-            <Input
-              key={index}
-              label={formField.label}
-              type={formField.type}
-              name={formField.name}
+            <FormInput
+              key={field.id}
+              id={field.id}
+              type={field.type}
+              name={field.name}
+              label={field.label}
+              placeholder={field.placeholder}
               register={register}
+              rules={{ required: field.requiredMessage }}
+              errors={errors}
             />
           );
         })}
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
       <DevTool control={control} />
     </React.Fragment>

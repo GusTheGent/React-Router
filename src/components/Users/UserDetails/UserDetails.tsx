@@ -10,15 +10,22 @@ const UserDetails: React.FunctionComponent<UserDetailsProps> = () => {
   return (
     <React.Fragment>
       <div className={styles.container}>
-        <img src={user?.image} alt="" className={styles["user-img"]} />
+        <div className={styles.status}>
+          <span>Active:</span>
+          <span
+            className={styles.dot}
+            style={{ background: user?.active ? "green" : "red" }}
+          ></span>
+        </div>
+        <img src={user?.details.image} alt="" className={styles["user-img"]} />
         <h3>
           {user?.name}{" "}
           <span className={styles["pro-name"]}>{user?.proName}</span>{" "}
           {user?.surname}
         </h3>
-        <p>Age: {user?.age}</p>
-        <p>Sport: {user?.sport}</p>
-        <p>Country: {user?.country}</p>
+        <p>Age: {user?.details.age}</p>
+        <p>Sport: {user?.details.sport}</p>
+        <p>Country: {user?.details.country}</p>
       </div>
     </React.Fragment>
   );

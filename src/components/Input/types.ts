@@ -1,16 +1,16 @@
-import { User } from "components/Users/types";
-import {
-  FieldValues,
-  RegisterOptions,
-  UseFormRegisterReturn,
-} from "react-hook-form";
+import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 
-export type InputProps = React.HTMLProps<HTMLInputElement> & {
+export type InputSize = "medium" | "large";
+export type InputType = "text" | "email" | "number" | "radio";
+
+export type InputProps = {
+  id: string;
+  name: string;
   label: string;
-  type: string | number | boolean;
-  name: keyof User;
-  register: (
-    name: keyof User,
-    options?: RegisterOptions<FieldValues, string> | undefined
-  ) => UseFormRegisterReturn<any>;
-};
+  type?: InputType;
+  size?: InputSize;
+  className?: string;
+} & Omit<
+  DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+  "size"
+>;
