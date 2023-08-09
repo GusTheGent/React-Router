@@ -1,20 +1,23 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "components/Home/Home";
-import NavBar from "components/Navbar/Navbar";
-import Participation from "components/Participation/Participation";
-import NotFound from "components/Not-Found/Not-Found";
-import Products from "components/Products/Products";
-import Featured from "components/Products/components/Featured/Featured";
-import New from "components/Products/components/New/New";
-import Users from "components/Users/Users";
-import UserDetails from "components/Users/UserDetails/UserDetails";
-import Profile from "components/Profile/Profile";
+//UTILS IMPORTS
 import { AuthProvider } from "utils/Auth/Auth";
-import Login from "components/Login/Login";
 import RequireAuth from "utils/RequireAuth/RequireAuth";
-const LazyAboutComponent = React.lazy(() => import("components/About/About"));
+//COMPONENTS IMPORTS
+import NavBar from "components/Navbar/Navbar";
+import NotFound from "components/Not-Found/Not-Found";
+import Featured from "components/FeaturedProducts/FeaturedProducts";
+import New from "components/NewProducts/NewProducts";
+import UserDetails from "components/UserDetails/UserDetails";
+//PAGE IMPORTS
+import Login from "pages/Login/Login";
+import Home from "pages/Home/Home";
+import Profile from "pages/Profile/Profile";
+import Products from "pages/Products/Products";
+import Users from "pages/Users/Users";
+import Participation from "pages/Participation/Participation";
+const LazyAboutComponent = React.lazy(() => import("pages/About/About"));
 
 function App() {
   return (
