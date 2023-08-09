@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ParticipationProps } from "./types";
 import { participationFields } from "./helper";
 import Form from "components/Form/Form";
-import { User } from "pages/Users/types";
+import { User } from "models/User.interface";
 import { users } from "data/users";
 const Participation: React.FunctionComponent<ParticipationProps> = () => {
   const navigate = useNavigate();
