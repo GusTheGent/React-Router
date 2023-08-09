@@ -2,36 +2,21 @@ import React from "react";
 import { LoginProps } from "./types";
 import { AuthContextType, useAuth } from "utils/Auth/Auth";
 import { useNavigate } from "react-router-dom";
+import Form from "components/Form/Form";
+import { fieldValues } from "./helper";
 
 const Login: React.FunctionComponent<LoginProps> = () => {
-  const [user, setUser] = React.useState<AuthContextType>({
-    username: "",
-    login: () => {},
-    logout: () => {},
-  });
   const auth = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    auth.login(user);
+  const handleLogin = (data: Record<string, any>) => {
+    auth.login(data as AuthContextType);
     navigate("/", { replace: true });
   };
   return (
     <React.Fragment>
       <h1>Login</h1>
-      <label>
-        User: {""}
-        <input
-          type="text"
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setUser((previousState) => ({
-              ...previousState,
-              username: event.target.value,
-            }))
-          }
-        />
-      </label>
-      <button onClick={handleLogin}>Login</button>
+      <Form fieldValues={fieldValues} formSubmission={handleLogin} />
     </React.Fragment>
   );
 };
