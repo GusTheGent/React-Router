@@ -5,6 +5,7 @@ import { participationFields } from "./helper";
 import Form from "components/Form/Form";
 import { User } from "models/User.interface";
 import { users } from "data/users";
+import Button from "components/Button/Button";
 const Participation: React.FunctionComponent<ParticipationProps> = () => {
   const navigate = useNavigate();
   const handleSubmission = (data: Record<string, any>) => {
@@ -15,7 +16,7 @@ const Participation: React.FunctionComponent<ParticipationProps> = () => {
   return (
     <React.Fragment>
       <h1>Signup for the tournament</h1>
-      <button onClick={() => navigate(-1)}>Return</button>
+      <Button buttonText="Return" clickHandler={() => navigate(-1)} />
       <Form
         fieldValues={participationFields}
         formSubmission={handleSubmission}

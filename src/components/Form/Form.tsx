@@ -4,6 +4,7 @@ import { FormProps } from "./types";
 import FormInput from "../FormInput/FormInput";
 import { DevTool } from "@hookform/devtools";
 import "./Form.css";
+import Button from "components/Button/Button";
 
 const Form: React.FunctionComponent<FormProps> = ({
   fieldValues,
@@ -38,7 +39,7 @@ const Form: React.FunctionComponent<FormProps> = ({
             />
           );
         })}
-        <button type="submit">Submit</button>
+        <Button buttonType="submit" buttonText="Submit" />
       </form>
       <DevTool control={control} />
     </React.Fragment>

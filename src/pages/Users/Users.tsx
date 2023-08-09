@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, Link, useSearchParams } from "react-router-dom";
 import { UsersProps } from "./types";
 import { users } from "data/users";
+import Button from "components/Button/Button";
 
 const Users: React.FunctionComponent<UsersProps> = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -10,10 +11,14 @@ const Users: React.FunctionComponent<UsersProps> = () => {
     <React.Fragment>
       <h1>Athletes</h1>
       <div>
-        <button onClick={() => setSearchParams({ filter: "active" })}>
-          Active Fighters
-        </button>
-        <button onClick={() => setSearchParams({})}>Reset Filter</button>
+        <Button
+          buttonText="Active Fighters"
+          clickHandler={() => setSearchParams({ filter: "active" })}
+        />
+        <Button
+          buttonText="Reset Filter"
+          clickHandler={() => setSearchParams({})}
+        />
       </div>
       {showActive
         ? users

@@ -1,5 +1,6 @@
 import React, { forwardRef, ForwardedRef } from "react";
 import { InputProps } from "./types";
+import "./Input.css";
 
 const Input = forwardRef(
   (
@@ -9,7 +10,7 @@ const Input = forwardRef(
       label,
       type = "text",
       size = "medium",
-      className = "",
+      className = "input",
       placeholder,
       ...props
     }: InputProps,
@@ -17,6 +18,7 @@ const Input = forwardRef(
   ) => {
     return (
       <input
+        className={className}
         id={id}
         ref={ref}
         name={name}
